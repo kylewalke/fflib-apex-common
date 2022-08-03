@@ -364,7 +364,7 @@ public abstract with sharing class fflib_SObjectSelector
      * Returns a QueryFactory configured with the Selectors object, fields, fieldsets and default order by
      * CRUD and FLS read security will be checked if the corresponding inputs are true (overrides that defined in the selector).
      **/
-    public fflib_QueryFactory newQueryFactory(Boolean assertCRUD, Boolean enforceFLS, Boolean includeSelectorFields)
+    public virtual fflib_QueryFactory newQueryFactory(Boolean assertCRUD, Boolean enforceFLS, Boolean includeSelectorFields)
     {
     	// Construct QueryFactory around the given SObject
         return configureQueryFactory(

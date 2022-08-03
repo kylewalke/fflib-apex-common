@@ -34,6 +34,7 @@ public virtual class fflib_Application
 	/**
 	 * Class implements a Unit of Work factory
 	 **/
+	public Integer numberOne = 1;
 	public virtual class UnitOfWorkFactory implements fflib_IUnitOfWorkFactory
 	{
 		protected List<SObjectType> m_objectTypes;
@@ -52,6 +53,15 @@ public virtual class fflib_Application
 		public UnitOfWorkFactory(List<SObjectType> objectTypes)
 		{
 			m_objectTypes = objectTypes.clone();
+		}
+
+		/**
+		 * Post construction, register a new type for the UOW.
+		 */
+		public void registerType(SObjectType objectType)  {
+			if (!this.m_objectTypes.contains(objectType)) {
+				this.m_objectTypes.add(objectType);
+			}
 		}
 
 		/**

@@ -584,8 +584,8 @@ private with sharing class fflib_SObjectUnitOfWorkTest
                                 }
                         }
                 )
-                        .matches(mockDML.recordsForUpdate),
-                'Not all records should not be registered with the dirty values'
+                        .matches(mockDML.recordsForInsert),
+                'Not all records should not be registered with the dirty values. '  + mockDML.toString()
         );
         System.assert(
                 new fflib_MatcherDefinitions.SObjectsWith(
